@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Justified Nav Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../stylesheets/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script src="../javascripts/Chart.js"></script>
+	<script src="../javascripts/jquery-2.1.0.min.js"></script>
+	
+	<script src="../javascripts/demo.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active" id="homeMenu"><a href="#" id="home">日志分析系统</a></li>
+            <li id="platformMenu"><a href="#" id="platform">运营平台</a></li>
+            <li id="merchantMenu"><a href="#" id="merchant">商户平台</a></li>
+            <li id="auditMenu"><a href="#" id="audit">审计</a></li>
+			<li id="settingMenu"><a href="#" id="setting">系统设置</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="display:none" id="searchDiv">
+        <p class="lead">
+			<input type="radio" name="dateRange" value="1">last 3 days
+			<input type="radio" name="dateRange" value="2" style="margin-left: 10px">last 1 week
+			<input type="radio" name="dateRange" value="2" style="margin-left: 10px">last 1 month
+			<input type="radio" name="dateRange" value="2" style="margin-left: 10px;"><span style="margin-right: 30px;">last 1 year</span>
+			开始：<input type="text" name="start" id="start" style="width: 120px" > 
+			截止：<input type="text" name="start" id="start" style="width: 120px">
+			<a class="btn btn-primary" href="#" role="button">刷新</a></p>
+      </div>
+
+	  <div class="jumbotron" style="display:block" id="titleDiv">
+        <p class="lead"><h2>系统架构简介</h2></p>
+      </div>
+
+      <!-- Home -->
+	  <div class="row" style="display:block" id="homeContent">
+        <div class="col-lg-4">
+          <h3>系统组件信息</h2>
+          <p>this is the basic information of this system.</p>
+        </div>
+
+        <div class="col-lg-4" id="canvas-holder">
+		  <h3>架构图</h2>
+          <image src="../images/analysis.jpg" />
+       </div>
+      </div>
+
+	  <!-- platform -->
+       <div class="row" style="display:none" id="platformContent">
+        <div class="col-lg-4">
+          <h3>product list</h2>
+          <table>
+			<tr><td><a class="" href="#">member</a></td></tr>
+		  </table>
+          <p></p>
+        </div>
+
+        <div class="col-lg-4" id="canvas-holder">
+		  <h3>使用分布</h2>
+          <canvas id="chart-area" width="300" height="300"/>
+       </div>
+
+        <div class="col-lg-4">
+          <h3>错误分布</h2>
+          <canvas id="chart-area2" width="300" height="300"/>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script>
+
+		var pieData = [
+				{
+					value: 300,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "billing"
+				},
+				{
+					value: 50,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Green"
+				},
+				{
+					value: 100,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "Yellow"
+				},
+				{
+					value: 40,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "Grey"
+				},
+				{
+					value: 120,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Dark Grey"
+				}
+
+			];
+	</script>
+  </body>
+</html>
